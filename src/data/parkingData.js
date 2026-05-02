@@ -1,0 +1,117 @@
+// Mock parking bay data for Tower Hamlets / Canary Wharf area
+// Each bay has a position, status, price, and rules
+// In production: replace with live council API + Firebase real-time data
+
+export const PARKING_BAYS = [
+  {
+    id: 'bay_001',
+    name: 'Whitechapel Road',
+    lat: 51.5194,
+    lng: -0.0617,
+    status: 'paid',       // 'free' | 'paid' | 'full'
+    confidence: 4,        // 1-5 (how many users confirmed this)
+    pricePerHour: 4.50,
+    restrictions: 'Mon–Sat 8:00–20:00',
+    maxStay: '2 hours',
+    paymentMethods: ['RingGo', 'PayByPhone'],
+    zone: 'E1',
+    lastUpdated: '3 min ago',
+  },
+  {
+    id: 'bay_002',
+    name: 'Commercial Road',
+    lat: 51.5138,
+    lng: -0.0558,
+    status: 'full',
+    confidence: 5,
+    pricePerHour: 6.35,
+    restrictions: 'Mon–Sat 9:00–18:00',
+    maxStay: '4 hours',
+    paymentMethods: ['RingGo', 'PayByPhone', 'App'],
+    zone: 'E1',
+    lastUpdated: '1 min ago',
+  },
+  {
+    id: 'bay_003',
+    name: 'Mile End Road',
+    lat: 51.5257,
+    lng: -0.0387,
+    status: 'free',
+    confidence: 3,
+    pricePerHour: 0,
+    restrictions: 'Free after 18:30 and weekends',
+    maxStay: 'No limit',
+    paymentMethods: [],
+    zone: 'E3',
+    lastUpdated: '12 min ago',
+  },
+  {
+    id: 'bay_004',
+    name: 'Bethnal Green Road',
+    lat: 51.5245,
+    lng: -0.0614,
+    status: 'paid',
+    confidence: 1,
+    pricePerHour: 3.20,
+    restrictions: 'Mon–Fri 9:00–17:00',
+    maxStay: '1 hour',
+    paymentMethods: ['PayByPhone'],
+    zone: 'E2',
+    lastUpdated: '25 min ago',
+  },
+  {
+    id: 'bay_005',
+    name: 'Bow Road',
+    lat: 51.5275,
+    lng: -0.0235,
+    status: 'paid',
+    confidence: 5,
+    pricePerHour: 2.80,
+    restrictions: 'Mon–Sat 8:00–18:30',
+    maxStay: '3 hours',
+    paymentMethods: ['RingGo'],
+    zone: 'E3',
+    lastUpdated: 'just now',
+  },
+  {
+    id: 'bay_006',
+    name: 'Stepney Green',
+    lat: 51.5180,
+    lng: -0.0441,
+    status: 'full',
+    confidence: 4,
+    pricePerHour: 5.00,
+    restrictions: 'Mon–Sat 9:00–18:00',
+    maxStay: '2 hours',
+    paymentMethods: ['RingGo', 'PayByPhone'],
+    zone: 'E1',
+    lastUpdated: '8 min ago',
+  },
+  {
+    id: 'bay_007',
+    name: 'Roman Road',
+    lat: 51.5290,
+    lng: -0.0300,
+    status: 'free',
+    confidence: 2,
+    pricePerHour: 0,
+    restrictions: 'Free — no restrictions',
+    maxStay: 'No limit',
+    paymentMethods: [],
+    zone: 'E3',
+    lastUpdated: '18 min ago',
+  },
+];
+
+// Mock hazard/report pins on the map
+export const REPORTS = [
+  { id: 'r1', type: 'warden', lat: 51.5200, lng: -0.0580, label: 'Warden spotted', time: '2 min ago' },
+  { id: 'r2', type: 'blocked', lat: 51.5150, lng: -0.0500, label: 'Bay blocked', time: '7 min ago' },
+  { id: 'r3', type: 'accident', lat: 51.5270, lng: -0.0400, label: 'Accident nearby', time: '15 min ago' },
+];
+
+export const STATUS_CONFIG = {
+  free:    { color: '#22c55e', bg: '#052e16', label: 'Free' },
+  paid:    { color: '#3b82f6', bg: '#1e3a5f', label: 'Paid' },
+  full:    { color: '#ef4444', bg: '#450a0a', label: 'Full' },
+};
