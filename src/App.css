@@ -28,11 +28,22 @@
 
 body {
   font-family: var(--font);
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: #f8fafc;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   overflow: hidden;
   height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 3px;
 }
 
 .app-root {
@@ -41,7 +52,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #090c10;
+  background: #f8fafc;
+}
+
+@media (max-width: 480px) {
+  .app-root > div {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Scrollbar */
