@@ -5,13 +5,9 @@ import { useCallback, useRef, useState } from 'react';
 import { REPORT_COOLDOWN_MS, REPORT_LABELS } from '../constants';
 import { getBayLabelPosition } from '../utils/mapHelpers';
 import { getStoredReports, saveStoredReports } from '../utils/storage';
-import { REPORTS as SEED_REPORTS } from '../data/parkingData';
 
 export default function useReports(mapRef, userLocation, onBayStatusChange) {
-  const [reports, setReports] = useState(() => [
-    ...SEED_REPORTS,
-    ...getStoredReports(),
-  ]);
+  const [reports, setReports] = useState(() => getStoredReports());
   const lastReportAtRef = useRef(0);
 
   const getMapCenter = useCallback(() => {
